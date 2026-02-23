@@ -1,7 +1,43 @@
 ---
 import Card from '@components/Card.astro';
+import Grid from '@components/Grid.astro';
+import Heading from '@components/Heading.astro';
 import Button from '@components/Button.astro';
+import Counter from "@components/Counter.tsx";
 import data from '@data/data.json';
+
+const headings = [
+	{
+		tag: "h1",
+		size: "h1",
+		text: "Heading 1",
+	},
+	{
+		tag: "h2",
+		size: "h2",
+		text: "Heading 2",
+	},
+	{
+		tag: "h3",
+		size: "h3",
+		text: "Heading 3",
+	},
+	{
+		tag: "h4",
+		size: "h4",
+		text: "Heading 4",
+	},
+	{
+		tag: "h5",
+		size: "h5",
+		text: "Heading 5",
+	},
+	{
+		tag: "h6",
+		size: "h6",
+		text: "Heading 6",
+	},
+];
 ---
 
 <!doctype html>
@@ -15,12 +51,116 @@ import data from '@data/data.json';
 	<title>Astro Basics</title>
 </head>
 <body>
-{data.map((card) => <Card data = {card} />)}
+{
+      headings.map((heading) => {
+        return (
+          <Heading tag={heading.tag} size={heading.size}>
+            {heading.text.toLocaleUpperCase()}
+          </Heading>
+        );
+      })
+    }
+<Heading tag="h2" size="h3"> HI </Heading>
 <Button id="my-id" aria-label="Click Me">Click Me</Button>
+
+<Grid columns={3}>
+	{data.map((card) => <Card data = {card} />)}
+</Grid>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae blanditiis consequatur debitis deleniti dolorem
+	doloremque nostrum repellendus saepe, sapiente tempore, vero voluptatum. Dignissimos doloremque dolores illum
+	inventore ipsam totam?</p>
+<p>Ab accusamus accusantium cumque dignissimos, et expedita fugit harum, laboriosam laudantium magni mollitia nemo
+	placeat possimus, sunt unde vitae voluptatem? Dolore eum expedita iusto magni nihil sequi temporibus? Aliquid,
+	blanditiis.</p>
+<p>Accusantium consequuntur eius enim eos exercitationem hic inventore, maiores nostrum nulla praesentium quae quaerat
+	quisquam reiciendis, rem ut? Deserunt ea facere illum ipsum minus neque nesciunt nobis qui repellendus tempore.</p>
+<p>Aperiam consectetur eos facere, obcaecati officiis omnis perspiciatis rem! Aut dicta dignissimos eligendi esse
+	inventore molestiae mollitia nobis officia quas quasi quibusdam reiciendis, sapiente sint sit suscipit unde velit
+	voluptates.</p>
+<p>Alias aliquam autem deleniti dolorum eaque eum, ex fugiat incidunt ipsum iste itaque officia optio quis quisquam quo
+	recusandae repellat saepe sit vero voluptatibus! Cumque deleniti quia rem voluptas voluptates!</p>
+<p>Ab amet aspernatur dolore ducimus ea earum eius eos ipsum laborum laudantium libero minus nemo neque provident quidem
+	quisquam, quos recusandae repellendus reprehenderit sapiente sint, soluta sunt vel voluptas voluptatem?</p>
+<p>Ab ad consectetur consequatur cumque, delectus deserunt, enim eum ex libero maiores nemo, nostrum odio quam qui
+	ratione saepe tempore veritatis voluptas. Cum delectus dolorum eveniet ex hic mollitia tenetur?</p>
+<p>Accusamus animi atque aut consequatur distinctio et explicabo illum quisquam ullam unde. Aliquid aspernatur dolorem
+	dolorum, error esse mollitia nam neque perferendis quam quidem! Assumenda cupiditate eius quasi soluta vero.</p>
+<p>Eligendi necessitatibus porro temporibus! Accusamus, accusantium asperiores aspernatur debitis deleniti doloribus,
+	earum enim eos iusto necessitatibus, numquam officiis placeat porro repellat rerum sapiente soluta veritatis. Aut
+	deserunt doloremque quaerat quam!</p>
+<p>At consectetur corporis culpa nemo neque nisi quibusdam quis saepe ullam. Adipisci alias aliquid, consequatur,
+	distinctio dolorum eius eum excepturi facere fuga nobis non omnis quas quos rem tenetur voluptatibus.</p>
+<p>Aliquam amet commodi cum dicta doloribus esse eveniet explicabo facilis fuga, libero nesciunt praesentium quae
+	quaerat quos repellat reprehenderit, suscipit totam, vel? Consequuntur debitis dolorem minima, provident ratione
+	rerum veniam.</p>
+<p>Dolor dolores neque repellat rerum! A ad, atque consequuntur cum dolorum ducimus eaque et id itaque iusto magni
+	maiores maxime natus nesciunt nostrum odio repellendus sapiente soluta tempore ut, vel!</p>
+<p>A ad deserunt dignissimos, dolores facilis fugiat fugit, magni officia placeat sapiente suscipit veniam voluptatem!
+	Aliquid doloremque eligendi est illum perspiciatis provident quae sapiente. Ex molestias neque perferendis quos
+	saepe.</p>
+<p>Delectus dolorem dolores minima nobis placeat tenetur voluptate. Eligendi illo incidunt mollitia nisi, quae
+	reiciendis voluptatum! A aliquid autem deserunt dolore doloremque, excepturi, explicabo magni nostrum repellendus,
+	repudiandae ut voluptatem.</p>
+<p>A accusamus at explicabo incidunt minus molestias neque, odit placeat quam quia quisquam sequi vel voluptatibus! Amet
+	beatae distinctio, dolor dolorum earum facilis fuga minus molestiae, omnis totam velit voluptas.</p>
+<p>Accusantium aliquam amet beatae blanditiis dicta dolore, fuga id iure labore, nisi non nulla officia perferendis
+	porro provident quas quidem quisquam quo reiciendis repellendus, repudiandae rerum unde veniam! Fuga, itaque!</p>
+<p>Accusamus ad aliquam amet animi, aspernatur corporis cumque delectus doloremque dolores error ex, facere impedit
+	maiores neque nisi perferendis praesentium quas quidem quis rem reprehenderit similique sunt totam vel
+	voluptatem.</p>
+<p>Architecto assumenda delectus distinctio earum et illum, laborum quam quia. Aliquam architecto, assumenda corporis
+	debitis delectus dolor eligendi enim exercitationem iure necessitatibus odio quas, quod ratione repellendus saepe
+	sed voluptas.</p>
+<p>Aspernatur dignissimos dolorem eligendi excepturi, nam natus sapiente ut voluptas. Aspernatur, commodi cupiditate
+	dolorum inventore iste iure laborum maxime non omnis perferendis provident quasi reiciendis rem saepe tempore, vero
+	voluptatem!</p>
+<p>Accusamus accusantium aut ea, fuga fugit ipsa itaque odio possimus. Adipisci culpa cumque nulla provident ratione
+	repellat tempore voluptates! Asperiores consectetur in, libero mollitia quam rem tenetur veniam vero vitae.</p>
+<p>Accusantium atque delectus deleniti dignissimos ea eos esse eum facere ipsa molestiae nulla, obcaecati sit. At,
+	blanditiis culpa distinctio doloremque exercitationem inventore iusto modi odit, officiis optio porro provident
+	vel.</p>
+<p>Ab accusamus aliquid at consectetur cum debitis ea eveniet exercitationem facere illum incidunt, ipsam labore modi
+	nihil non obcaecati odit perferendis perspiciatis provident rem repellendus sed sequi sit tempore tenetur.</p>
+<p>Aut cumque, dolores dolorum fugiat iste pariatur qui quis sit soluta unde? Architecto consequuntur exercitationem id
+	in nam, qui ratione voluptate. Accusamus consequatur deserunt dignissimos exercitationem, explicabo inventore
+	laborum totam.</p>
+<p>Consequuntur deserunt dolor harum in ipsa labore, officiis placeat soluta. Ab delectus doloribus expedita in
+	inventore laudantium natus neque pariatur repellat veniam. Ad dolor id iure, repellat saepe suscipit tenetur!</p>
+<p>Accusantium amet animi architecto at cumque debitis deserunt dolores esse et fugit natus, necessitatibus, nisi
+	nostrum quidem reprehenderit similique suscipit tempora totam ullam veniam. Cum delectus eveniet nihil pariatur
+	vero.</p>
+<p>Aperiam cum dignissimos distinctio dolore dolores, eius et explicabo fugiat maiores minus nesciunt officiis
+	perferendis placeat repudiandae rerum suscipit voluptates. A, ad amet aperiam autem dignissimos doloremque
+	exercitationem pariatur. Adipisci!</p>
+<p>Architecto culpa dolore eaque esse fugiat temporibus voluptas? Asperiores, cum deleniti dignissimos distinctio dolore
+	quam similique tempora. Deleniti laboriosam numquam similique vel? Corporis molestiae obcaecati quae quis ratione
+	rerum voluptates?</p>
+<p>Aliquid, amet architecto blanditiis commodi consectetur distinctio dolor earum et fugit harum illum inventore ipsum
+	iure iusto laboriosam laborum molestiae officiis provident qui quis quos soluta vitae voluptates. Cumque,
+	perspiciatis!</p>
+<p>Ab accusantium adipisci aliquam animi, aperiam assumenda commodi consequuntur doloremque, dolorum ea eaque eveniet
+	facilis laborum maxime modi officiis quas qui reiciendis reprehenderit, tempore. Asperiores excepturi ipsam laborum
+	quia vero?</p>
+<p>Ab alias, aliquid aspernatur assumenda at aut, consectetur consequatur culpa deleniti dignissimos doloremque
+	excepturi expedita illum in magnam mollitia nemo neque nihil nostrum odit pariatur, provident quaerat quibusdam ut
+	voluptatem.</p>
+<Counter client:only="react" />
 </body>
+<style>
+	@import "https://unpkg.com/open-props";
+	@import "https://unpkg.com/open-props/normalize.min.css";
+	body {
+		display: grid;
+		place-content: center;
+		gap: 1.5rem;
+		padding: 1.5rem;
+	}
+</style>
 <script>
 	(document.querySelector("#my-id") as HTMLElement).addEventListener("click", () => {
 		alert("clicked");
 	});
 </script>
 </html>
+

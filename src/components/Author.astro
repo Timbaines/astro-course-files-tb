@@ -2,10 +2,34 @@
 const { avatar, name, time } = Astro.props
 ---
 
-<div>
-    <img src={avatar} alt={name}>
-    <div>
+<div class="author">
+    <img class="author-avatar" src={avatar} alt={name}>
+    <div class="author-info">
         <p>{name}</p>
         <p>{time}</p>
     </div>
 </div>
+
+<style>
+    .author {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .author-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1.2;
+        color: #333333;
+        margin-left: 10px;
+    }
+</style>
